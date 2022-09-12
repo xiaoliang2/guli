@@ -31,6 +31,7 @@ import java.util.Map;
 @Api(description = "讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")
+@CrossOrigin
 public class EduTeacherController {
 
     @Autowired
@@ -42,7 +43,7 @@ public class EduTeacherController {
 
         List<EduTeacher> list = teacherService.list(null);
 
-        int a = 10/0;
+//        int a = 10/0;
 
         return R.ok().data("items",list);
     }
@@ -123,6 +124,8 @@ public class EduTeacherController {
             wrapper.le("gmt_modified",end);
         }
 
+//        排序
+        wrapper.orderByDesc("gmt_create");
 //        调用方法实现条件查询分页
         teacherService.page(pageTeacher,wrapper);
 

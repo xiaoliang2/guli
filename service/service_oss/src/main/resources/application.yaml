@@ -1,0 +1,16 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: service-oss
+  profiles:
+    active: dev
+
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-hangzhou.aliyuncs.com
+      keyid: LTAI5tKhqQEcomD9Cc4Janhi
+      keysecret: tAlQ8Q438W9ZbKQIugLYgIYileEwGh
+      bucketname: athuang2
