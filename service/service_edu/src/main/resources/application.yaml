@@ -17,8 +17,22 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT
-
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+#配置mapper xml文件的路径
+#mybatis-plus.mapper-locations=classpath:com/atguigu/eduservice/mapper/xml/*.xml
 #   设置mybatis日志
 #mybatis-plus:
 #  configuration:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis-plus:
+  mapper-locations: classpath:com/athuang/eduservice/mapper/xml/*.xml
+
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  metrics:
+    polling-interval-ms: 6000

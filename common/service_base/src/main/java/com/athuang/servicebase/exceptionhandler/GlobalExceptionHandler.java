@@ -1,9 +1,11 @@
 package com.athuang.servicebase.exceptionhandler;
 
 
+
+
+
 import com.athuang.commonutils.R;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,7 +31,7 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
 
         return R.error().message("执行了全局异常处理");
-    }
+    }//
 
     @ExceptionHandler(GuliException.class)
     @ResponseBody

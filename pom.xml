@@ -8,8 +8,7 @@
     <modules>
         <module>service</module>
         <module>common</module>
-        <module>service_vod</module>
-        <module>service_vod</module>
+
     </modules>
     <name>guli_parent</name>
     <description>Demo project for Spring Boot</description>
@@ -54,6 +53,8 @@
         <aliyun-java-vod-upload.version>1.4.11</aliyun-java-vod-upload.version>
 
         <aliyun-sdk-vod-upload.version>1.4.11</aliyun-sdk-vod-upload.version>
+
+        <aliyun-java-sdk-kms.version>2.10.1</aliyun-java-sdk-kms.version>
 
         <fastjson.version>1.2.28</fastjson.version>
 
@@ -317,6 +318,12 @@
 
                 <version>${aliyun-java-vod-upload.version}</version>
 
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-kms</artifactId>
+                <version>${aliyun-java-sdk-kms.version}</version>
             </dependency>
 
             <dependency>

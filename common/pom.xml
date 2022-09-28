@@ -88,17 +88,17 @@
 
         </dependency>
 
-        <!-- spring2.X集成redis所需common-pool2
-41
+<!--       spring2.X集成redis所需common-pool2-->
+
         <dependency>
-42
+
             <groupId>org.apache.commons</groupId>
-43
+
             <artifactId>commons-pool2</artifactId>
-44
+
             <version>2.6.0</version>
-45
-        </dependency>-->
+
+        </dependency>
 
     </dependencies>
 
