@@ -1,13 +1,13 @@
 
 server:
-  port: 8006
+  port: 8160
 
 spring:
   application:
     name: service-ucenter
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/guli?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT&allowPublicKeyRetrieval=true
+    url: jdbc:mysql:// 127.0.0.1:3306/guli?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT&allowPublicKeyRetrieval=true
     username: root
     password: huangyanliang067
   jackson:
@@ -35,3 +35,25 @@ mybatis-plus:
     mapper-locations: classpath:com/athuang/educenter/mapper/xml/*.xml
     configuration:
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 微信开放平台
+wx:
+  open:
+    app_id: wxed9954c01bb89b47
+    app_secret: a7482517235173ddb4083788de60b90e
+    redirect_url: http:// localhost:8160/api/ucenter/wx/callback
+
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 40000
+        readTimeout: 40000
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 3000
+
+

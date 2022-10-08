@@ -29,7 +29,7 @@ import java.util.List;
 @Api(description = "讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")
-@CrossOrigin
+//@CrossOrigin
 public class EduTeacherController {
 
     @Autowired
@@ -41,7 +41,7 @@ public class EduTeacherController {
 
         List<EduTeacher> list = teacherService.list(null);
 
-//        int a = 10/0;
+//         int a = 10/0;
 
         return R.ok().data("items",list);
     }
@@ -60,7 +60,7 @@ public class EduTeacherController {
 
     }
 
-//    分页查询方法
+//     分页查询方法
 
     @GetMapping("pageTeacher/{current}/{limit}")
     public R pageListTeacher(@PathVariable long current,
@@ -68,45 +68,46 @@ public class EduTeacherController {
     {
 
         Page<EduTeacher> pageTeacher = new Page<>(current,limit);
-        System.out.println(limit);
-        System.out.println(current);
-//        调用方法实现分页
-//        调用方法的时候，底层封装，把分页所有数据封装到pageTeacher对象里面
+//         System.out.println(limit);
+//         System.out.println(current);
+//         调用方法实现分页
+//         调用方法的时候，底层封装，把分页所有数据封装到pageTeacher对象里面
         teacherService.page(pageTeacher,null);
-//        总记录数
+//         总记录数
         long total = pageTeacher.getTotal();
 
-//        数据list集合
+//         数据list集合
         List<EduTeacher> records = pageTeacher.getRecords();
-        System.out.println(records);
-//        Map map = new HashMap();
+//         System.out.println(records);
+//         Map map = new HashMap();
 //
-//        map.put("total",total);
-//        map.put("rows",records);
+//         map
+//         .put("total",total);
+//         map.put("rows",records);
 //
-//        return R.ok().data(map);
+//         return R.ok().data(map);
 
         return R.ok().data("total",total).data("rows",records);
     }
-
+//      条件分页
     @PostMapping("pageTeacherCondition/{current}/{limit}")
     public R pageTeacherCondition(@PathVariable long current, @PathVariable(required = false) long limit,@RequestBody TeacherQuery teacherQuery)
     {
 
-//        创建page对象
+//         创建page对象
         Page<EduTeacher> pageTeacher = new Page<>(current,limit);
-//        构建条件
+//         构建条件
         QueryWrapper<EduTeacher> wrapper = new QueryWrapper<>();
 
-//        多条件组合查询，使用动态sql
+//         多条件组合查询，使用动态sql
         String name = teacherQuery.getName();
         Integer level = teacherQuery.getLevel();
         String begin = teacherQuery.getBegin();
         String end = teacherQuery.getEnd();
-//        判断条件是否为空，如果不为空则拼接条件
+//         判断条件是否为空，如果不为空则拼接条件
         if (!StringUtils.isEmpty(name))
         {
-//            构建条件
+//             构建条件
             wrapper.like("name",name);
         }
         if (!StringUtils.isEmpty(level))
@@ -122,9 +123,9 @@ public class EduTeacherController {
             wrapper.le("gmt_modified",end);
         }
 
-//        排序
+//         排序
         wrapper.orderByDesc("gmt_create");
-//        调用方法实现条件查询分页
+//         调用方法实现条件查询分页
         teacherService.page(pageTeacher,wrapper);
 
         long total = pageTeacher.getTotal();
@@ -133,7 +134,7 @@ public class EduTeacherController {
         return R.ok().data("total",total).data("rows",records);
     }
 
-//    添加讲师接口方法
+//     添加讲师接口方法
     @PostMapping("addTeacher")
     public R addTeacher(@RequestBody EduTeacher eduTeacher)
     {
@@ -147,7 +148,7 @@ public class EduTeacherController {
         }
     }
 
-//    根据id查询
+//     根据id查询
 
     @GetMapping("getTeacher/{id}")
     public R getTeacher(@PathVariable String id)
@@ -157,7 +158,7 @@ public class EduTeacherController {
         return R.ok().data("teacher",eduTeacher);
     }
 
-//    讲师修改
+//     讲师修改
 
     @PostMapping("updateTeacher")
     public R updateTeacher(@RequestBody EduTeacher eduTeacher)

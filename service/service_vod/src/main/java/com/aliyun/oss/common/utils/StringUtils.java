@@ -20,7 +20,7 @@ public class StringUtils {
 
     private static final Locale LOCALE_ENGLISH = Locale.ENGLISH;
 
-    // white space character that match Pattern.compile("\\s")
+    //  white space character that match Pattern.compile("\\s")
     private static final char CHAR_SPACE = ' ';
     private static final char CHAR_TAB = '\t';
     private static final char CHAR_NEW_LINE = '\n';

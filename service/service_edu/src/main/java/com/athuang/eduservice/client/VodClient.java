@@ -19,12 +19,12 @@ import java.util.List;
 @Component
 public interface VodClient {
 
-//    定义调用的方法路径
-//    根据视频id删除阿里云视频
+//     定义调用的方法路径
+//     根据视频id删除阿里云视频
 @DeleteMapping("/eduvod/video/removeAlyVideo/{videoId}")
 public R removeAlyVideo(@PathVariable("videoId") String videoId);
 
-//    定义删除多个视频的方法
+//     定义删除多个视频的方法
 @DeleteMapping("/eduvod/video/delete-batch")
 public R deleteBatch(@RequestParam("videoIdList") List<String> videoIdList);
 }

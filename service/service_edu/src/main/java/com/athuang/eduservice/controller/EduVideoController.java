@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/eduservice/video")
-@CrossOrigin
+//@CrossOrigin
 public class EduVideoController {
 
 
@@ -30,7 +30,7 @@ public class EduVideoController {
     @Autowired
     private VodClient vodClient;
 
-//    添加小节
+//     添加小节
     @PostMapping("addVideo")
     public R addVideo(@RequestBody EduVideo eduVideo)
     {
@@ -39,16 +39,16 @@ public class EduVideoController {
         return R.ok();
     }
 
-//    删除小节并且删除阿里云中的视频
+//     删除小节并且删除阿里云中的视频
     @DeleteMapping("{id}")
     public R deleteVideo(@PathVariable String  id)
     {
 
-//        根据小节id获取视频id
+//         根据小节id获取视频id
         EduVideo eduVideo = videoService.getById(id);
         String videoSourceId = eduVideo.getVideoSourceId();
-//        判断小节是否有视频id
-//        根据视频id，实现远程调用实现视频删除
+//         判断小节是否有视频id
+//         根据视频id，实现远程调用实现视频删除
         if(!StringUtils.isEmpty(videoSourceId))
         {
             R result = vodClient.removeAlyVideo(videoSourceId);
@@ -58,13 +58,13 @@ public class EduVideoController {
             }
         }
 
-//      删除小节
+//       删除小节
         videoService.removeById(id);
 
         return R.ok();
     }
 
-//    修改小节
+//     修改小节
     @PostMapping("updateVideo")
     public R updateVideo(@RequestBody EduVideo eduVideo)
     {
@@ -73,7 +73,7 @@ public class EduVideoController {
         return R.ok();
     }
 
-//    根据id查询小节
+//     根据id查询小节
     @PostMapping("getVideo/{videoId}")
     public R getVideo(@PathVariable String videoId)
     {

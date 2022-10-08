@@ -30,7 +30,7 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("/eduservice/indexfront")
-@CrossOrigin
+//@CrossOrigin
 public class IndexFrontController {
 
     @Autowired
@@ -39,7 +39,7 @@ public class IndexFrontController {
     @Autowired
     private EduTeacherService teacherService;
 
-//    查询前8条热门课程，前四名师
+//     查询前8条热门课程，前四名师
 
     @GetMapping("index")
     public R index()

@@ -20,11 +20,11 @@ import java.util.List;
  **/
 
 public interface VodService {
-    //上传视频到阿里云
+    // 上传视频到阿里云
     String uploadVideoAly(MultipartFile file);
 
     void removeMoreAlyVideo(List videoIdList);
 
-//    void removeAlyVideo(String videoId);
+//     void removeAlyVideo(String videoId);
 }
 

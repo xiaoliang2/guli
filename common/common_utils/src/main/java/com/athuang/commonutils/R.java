@@ -30,12 +30,12 @@ public class R {
     @ApiModelProperty(value = "返回数据")
     private Map<String,Object> data = new HashMap<String,Object>();
 
-//    构造方法私有
+//     构造方法私有
 
     private R()
     {}
 
-//    成功静态方法
+//     成功静态方法
     public static R ok()
     {
         R r = new R();
@@ -48,7 +48,7 @@ public class R {
 
 
 
-//    失败静态方法
+//     失败静态方法
 public static R error()
 {
     R r = new R();

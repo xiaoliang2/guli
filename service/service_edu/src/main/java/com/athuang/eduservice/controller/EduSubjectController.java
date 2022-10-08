@@ -21,30 +21,30 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduservice/subject")
-@CrossOrigin
+//@CrossOrigin
 public class EduSubjectController {
 
     @Autowired
     private EduSubjectService eduSubjectService;
 
-//    添加课程分类
-//    获取上传过来的文件，把文件内容读取出来
+//     添加课程分类
+//     获取上传过来的文件，把文件内容读取出来
 
     @PostMapping("addSubject")
     public R addSubject(MultipartFile file)
     {
-//        上传过来的excel文件
+//         上传过来的excel文件
 
         eduSubjectService.saveSubject(file,eduSubjectService);
 
         return R.ok();
     }
 
-//    课程分类列表（树形结构）
+//     课程分类列表（树形结构）
     @GetMapping("getAllSubject")
     public R getAllSubject()
     {
-//        list集合中泛型是一级分类
+//         list集合中泛型是一级分类
         List<OneSubject> list = eduSubjectService.getAllOneTwoSubject();
         return R.ok().data("list",list);
     }

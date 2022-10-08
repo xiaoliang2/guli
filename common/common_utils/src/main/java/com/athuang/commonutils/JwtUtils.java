@@ -19,7 +19,7 @@ public class JwtUtils {
     public static final long EXPIRE = 1000 * 60 * 60 * 24;
     public static final String APP_SECRET = "ukc8BDbRigUDaY6pZFfWus2jZWLPHO";
 
-//    生成token字符串的方法
+//     生成token字符串的方法
     public static String getJwtToken(String id, String nickname){
 
         String JwtToken = Jwts.builder()
@@ -28,10 +28,10 @@ public class JwtUtils {
                 .setSubject("guli-user")
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRE))
-//                设置token主体部分，存储用户信息
+//                 设置token主体部分，存储用户信息
                 .claim("id", id)
                 .claim("nickname", nickname)
-//                jwt签名hash
+//                 jwt签名hash
                 .signWith(SignatureAlgorithm.HS256, APP_SECRET)
                 .compact();
 

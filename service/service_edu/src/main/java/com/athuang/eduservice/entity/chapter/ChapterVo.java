@@ -21,7 +21,7 @@ public class ChapterVo {
 
     private String title;
 
-//    表示小节
+//     表示小节
 
     private List<VideoVo> children = new ArrayList<>();
 }

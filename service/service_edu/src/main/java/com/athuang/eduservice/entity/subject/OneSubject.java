@@ -21,7 +21,7 @@ public class OneSubject {
 
     private String title;
 
-//    一个一级分类有多个二级分类
+//     一个一级分类有多个二级分类
 
     private List<TwoSubject> children = new ArrayList<>();
 }

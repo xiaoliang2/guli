@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Slf4j
 public class GlobalExceptionHandler {
 
-//    指定出现什么异常执行这个方法
+//     指定出现什么异常执行这个方法
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public R error(Exception e)

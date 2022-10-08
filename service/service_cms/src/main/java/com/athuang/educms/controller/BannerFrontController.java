@@ -23,12 +23,12 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/educms/bannerfront")
-@CrossOrigin
+//@CrossOrigin
 public class BannerFrontController {
     @Autowired
     private CrmBannerService bannerService;
 
-//    查询所有banner
+//     查询所有banner
     @GetMapping("getAllBanner")
     public R getAllBanner()
     {

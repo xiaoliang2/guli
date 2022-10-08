@@ -40,7 +40,7 @@ public class CourseInfoVo {
     private String title;
 
     @ApiModelProperty(value = "课程销售价格，设置为0则可免费观看")
-    // 0.01
+    //  0.01
     private BigDecimal price;
 
     @ApiModelProperty(value = "总课时")

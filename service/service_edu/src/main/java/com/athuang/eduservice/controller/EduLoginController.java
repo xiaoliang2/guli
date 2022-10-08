@@ -14,20 +14,20 @@ import org.springframework.web.bind.annotation.*;
  **/
 @RestController
 @RequestMapping("eduservice/user")
-@CrossOrigin
+//@CrossOrigin
 public class EduLoginController {
 
-//    login
+//      login
     @PostMapping("login")
     public R login()
     {
         return R.ok().data("token","admin");
     }
 
-//    info
+//      info
     @GetMapping("info")
     public R info()
     {
-        return R.ok().data("roles","{admin}").data("name","admin").data("avatar","G://Chromedownloads/2c6e2fbeabdcc0a44e0bf0b4dff9819b.gif");
+        return R.ok().data("roles","{admin}").data("name","admin").data("avatar","G://  Chromedownloads/2c6e2fbeabdcc0a44e0bf0b4dff9819b.gif");
     }
 }

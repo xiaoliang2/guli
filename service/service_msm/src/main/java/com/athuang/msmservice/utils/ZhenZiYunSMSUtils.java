@@ -29,11 +29,11 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "zhenzi")
 public class ZhenZiYunSMSUtils {
 
-    private String apiUrl;          //apiUrl
-    private String appId;           //应用id
-    private String appSecret;       //应用secret
-    private String templateId;      //模板id
-    private String invalidTimer;    //失效时间
+    private String apiUrl;          // apiUrl
+    private String appId;           // 应用id
+    private String appSecret;       // 应用secret
+    private String templateId;      // 模板id
+    private String invalidTimer;    // 失效时间
     private String code;
 
     public String getCode() {
@@ -52,26 +52,26 @@ public class ZhenZiYunSMSUtils {
      * @return
      */
     public boolean sendSMS(String param,String telNumber) throws Exception {
-        //榛子云短信 客户端
-        //请求地址，个人开发者使用https://sms_developer.zhenzikj.com，企业开发者使用https://sms.zhenzikj.com
+        // 榛子云短信 客户端
+        // 请求地址，个人开发者使用https:// sms_developer.zhenzikj.com，企业开发者使用https:// sms.zhenzikj.com
         ZhenziSmsClient client = new ZhenziSmsClient(apiUrl, appId, appSecret);
-        //存放请求参数的map集合
+        // 存放请求参数的map集合
         Map<String, Object> params = new HashMap<String, Object>();
-        //接收者手机号码
+        // 接收者手机号码
         params.put("number", telNumber);
-        //短信模板ID
+        // 短信模板ID
         params.put("templateId", templateId);
-        //短信模板参数
+        // 短信模板参数
         String[] templateParams = new String[2];
 
-//        StringBuilder builder = new StringBuilder();
+//         StringBuilder builder = new StringBuilder();
 
-//        for (int i = 0 ; i < 4 ; i++)
-//        {
-//            int ramdom = (int)(Math.random() * 10);
-//            builder.append(ramdom);
-//        }
-//        String validateCode =  builder.toString();
+//         for (int i = 0 ; i < 4 ; i++)
+//         {
+//             int ramdom = (int)(Math.random() * 10);
+//             builder.append(ramdom);
+//         }
+//         String validateCode =  builder.toString();
         String validateCode = param;
         setCode(validateCode);
 
@@ -87,7 +87,7 @@ public class ZhenZiYunSMSUtils {
 
         JSONObject jsonObject = JSONObject.parseObject(result);
 
-//        System.out.println(jsonObject.getString("code"));
+//         System.out.println(jsonObject.getString("code"));
 
         if(jsonObject.getString("code").equals("0")){
 

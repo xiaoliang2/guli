@@ -29,13 +29,13 @@ public class EduVideoServiceImpl extends ServiceImpl<EduVideoMapper, EduVideo> i
     @Override
     public void removeVideoByCourseId(String courseId) {
 
-//        根据课程id查询视频id
+//         根据课程id查询视频id
         QueryWrapper<EduVideo> wrapperVideo = new QueryWrapper<>();
         wrapperVideo.eq("course_id",courseId);
         wrapperVideo.select("video_source_id");
         List<EduVideo> eduVideoList = baseMapper.selectList(wrapperVideo);
 
-//        List<Eduvideo> 变成 List<String>
+//         List<Eduvideo> 变成 List<String>
         List<String> videoIds = new ArrayList<>();
 
         for (int i = 0;i < eduVideoList.size(); i++)
@@ -44,16 +44,16 @@ public class EduVideoServiceImpl extends ServiceImpl<EduVideoMapper, EduVideo> i
             String videoSourceId = eduVideo.getVideoSourceId();
             if (!StringUtils.isEmpty(videoSourceId))
             {
-                //            放到videoIds集合里面
+                //             放到videoIds集合里面
                 videoIds.add(videoSourceId);
-//                System.out.println(videoIds.get(i));
+//                 System.out.println(videoIds.get(i));
             }
 
 
         }
         if (videoIds.size()>0)
         {
-            //        根据多个视频id删除多个视频
+            //         根据多个视频id删除多个视频
             vodClient.deleteBatch(videoIds);
         }
 

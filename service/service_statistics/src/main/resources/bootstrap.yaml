@@ -1,0 +1,9 @@
+# 配置中心地址
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+  application:
+    name: service-statistics

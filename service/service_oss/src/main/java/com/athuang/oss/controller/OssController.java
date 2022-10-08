@@ -21,17 +21,17 @@ import org.springframework.web.multipart.MultipartFile;
  **/
 @RestController
 @RequestMapping("/eduoss/fileoss")
-@CrossOrigin
+//@CrossOrigin
 public class OssController {
 
     @Autowired
     private OssService ossService;
 
-//    上传头像方法
+//     上传头像方法
     @PostMapping
     public R uploadOssFile(MultipartFile file){
 
-//        获取上传文件 multipartfile
+//         获取上传文件 multipartfile
         String url = ossService.uploadFileAvatar(file);
 
         return R.ok().data("url",url);

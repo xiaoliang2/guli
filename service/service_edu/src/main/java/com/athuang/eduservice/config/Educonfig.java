@@ -25,22 +25,22 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @MapperScan("com.athuang.eduservice.mapper")
 public class Educonfig {
-//    逻辑删除
+//     逻辑删除
     @Bean
     public ISqlInjector sqlInjector(){
         return new LogicSqlInjector();
     }
-//    分页
+//     分页
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         return new PaginationInterceptor();
     }
-//    @Bean
-//    public MybatisPlusInterceptor mybatisPlusInterceptor() {
-//        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
-//        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL)); //注意使用哪种数据库
-//        return interceptor;
-//    }
+//     @Bean
+//     public MybatisPlusInterceptor mybatisPlusInterceptor() {
+//         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+//         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL)); // 注意使用哪种数据库
+//         return interceptor;
+//     }
 
 
 }

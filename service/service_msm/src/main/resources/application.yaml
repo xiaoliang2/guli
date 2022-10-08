@@ -7,7 +7,7 @@ spring:
     name: service-msm
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/guli?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT&allowPublicKeyRetrieval=true
+    url: jdbc:mysql:// 127.0.0.1:3306/guli?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT&allowPublicKeyRetrieval=true
     username: root
     password: huangyanliang067
   jackson:
@@ -31,7 +31,7 @@ spring:
 #最大阻塞等待时间(负数表示没限制)
 #榛子云短信配置
 zhenzi:
-  apiUrl: https://sms_developer.zhenzikj.com #注意区别个人用户和企业用户
+  apiUrl: https:// sms_developer.zhenzikj.com #注意区别个人用户和企业用户
   appId: 111627
   appSecret: 6f75c472-f785-4ee5-9eba-97c0197fe22d
   templateId: 9354 #模板id

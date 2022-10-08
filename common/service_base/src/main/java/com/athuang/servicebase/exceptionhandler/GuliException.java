@@ -19,10 +19,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class GuliException extends RuntimeException{
 
-//    异常状态码
+//     异常状态码
     private Integer code;
 
-//    异常信息
+//     异常信息
     private String msg;
 
 }

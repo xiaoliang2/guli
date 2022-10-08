@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
  **/
 @RestController
 @RequestMapping("/edumsm/msm")
-@CrossOrigin
+//@CrossOrigin
 public class MsmController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class MsmController {
     @GetMapping("send/{phone}")
     public R sendMsm(@PathVariable String phone) throws Exception {
 
-//        从redis中获取验证码，如果能获取到直接返回
+//         从redis中获取验证码，如果能获取到直接返回
         String code = redisTemplate.opsForValue().get(phone);
 
         if (!StringUtils.isEmpty(code)){
@@ -41,13 +41,13 @@ public class MsmController {
         }
         code = RandomUtil.getFourBitRandom();
 
-//        调用service发送短信方法
+//         调用service发送短信方法
         boolean inSend = msmService.send(code,phone);
 
         if (inSend)
         {
-//            发送成功，把发送成功的验证码存入redis；
-//            并且设置有效时间
+//             发送成功，把发送成功的验证码存入redis；
+//             并且设置有效时间
             redisTemplate.opsForValue().set(phone,code,30, TimeUnit.MINUTES);
             return R.ok();
         }else{
